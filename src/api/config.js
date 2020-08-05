@@ -7,7 +7,7 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use(
-  (res) => res.data,
+  (res) => res,
   (err) => {
     console.log(err, '网络错误');
   }

@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
-import Swiper from "swiper";
-import "swiper/swiper-bundle.css";
+import React, { useState, useEffect } from 'react';
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
 
-import { SliderContainer } from "./style";
+import { SliderContainer } from './style';
 function Slider(props) {
   const [sliderSwiper, setSliderSwiper] = useState(null);
   const { bannerList } = props;
 
   useEffect(() => {
     if (bannerList.length && !sliderSwiper) {
-      let newSliderSwiper = new Swiper(".slider-container", {
+      let newSliderSwiper = new Swiper('.slider-container', {
         loop: true,
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,
         },
-        pagination: { el: ".swiper-pagination" },
+        pagination: { el: '.swiper-pagination' },
       });
       setSliderSwiper(newSliderSwiper);
     }
@@ -28,7 +28,7 @@ function Slider(props) {
         <div className="swiper-wrapper">
           {bannerList.map((slider) => {
             return (
-              <div className="swiper-slide" key={slider.key}>
+              <div className="swiper-slide" key={slider.imageUrl}>
                 <div className="slider-nav">
                   <img
                     src={slider.imageUrl}

@@ -16,11 +16,11 @@ export const changeRecommendList = (data) => ({
 export const getBannerList = () => {
   return (dispatch) => {
     getBannerRequest()
-      .then((data) => {
+      .then(({ data }) => {
         dispatch(changeBannerList(data.banners));
       })
-      .catch(() => {
-        console.log('轮播图数据传输错误');
+      .catch((e) => {
+        console.log('轮播图数据传输错误', e);
       });
   };
 };
@@ -28,7 +28,7 @@ export const getBannerList = () => {
 export const getRecommendList = () => {
   return (dispatch) => {
     getRecommendListRequest()
-      .then((data) => {
+      .then(({ data }) => {
         dispatch(changeRecommendList(data.result));
       })
       .catch(() => {
