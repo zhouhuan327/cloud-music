@@ -1,6 +1,8 @@
 import React from "react";
 import Slider from "../../components/slider";
 import RecommendList from "../../components/list";
+import Scroll from "../../baseUI/Scroll";
+import { Content } from "./style";
 function Recommend() {
   //mock 数据
   const bannerList = [1, 2, 3, 4].map((item) => {
@@ -12,7 +14,7 @@ function Recommend() {
   });
   const recommendList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
     return {
-      id: 1,
+      id: item,
       picUrl:
         "https://p1.music.126.net/fhmefjUfMD-8qtj3JKeHbA==/18999560928537533.jpg",
       playCount: 17171122,
@@ -21,10 +23,17 @@ function Recommend() {
   });
 
   return (
-    <div>
-      <Slider bannerList={bannerList}></Slider>
-      <RecommendList recommendList={recommendList}></RecommendList>
-    </div>
+    <>
+      <div className="before"></div>
+      <Content>
+        <Scroll className="list">
+          <div>
+            <Slider bannerList={bannerList}></Slider>
+            <RecommendList recommendList={recommendList}></RecommendList>
+          </div>
+        </Scroll>
+      </Content>
+    </>
   );
 }
 
