@@ -5,6 +5,7 @@ import Scroll from '../../baseUI/Scroll';
 import { Content } from './style';
 import { connect } from 'react-redux';
 import * as actionTypes from './store/actionCreators';
+import { forceCheck } from 'react-lazyload';
 function Recommend(props) {
   const { bannerList, recommendList } = props;
   const { getBannerDataDispatch, getRecommendListDataDispatch } = props;
@@ -17,7 +18,7 @@ function Recommend(props) {
     <>
       <div className="before"></div>
       <Content>
-        <Scroll className="list">
+        <Scroll className="list" onScroll={forceCheck}>
           <div>
             <Slider bannerList={bannerList}></Slider>
             <RecommendList recommendList={recommendList}></RecommendList>
