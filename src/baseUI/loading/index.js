@@ -24,7 +24,7 @@ const LoadingWrapper = styled.div`
     background-color: ${({ theme }) => theme['theme-color']};
     animation: ${loading} 1.4s infinite ease-in;
   }
-  > div:nth-child (2) {
+  > div:nth-child(2) {
     animation-delay: -0.7s;
   }
 `;

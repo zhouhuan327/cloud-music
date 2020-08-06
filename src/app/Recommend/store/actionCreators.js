@@ -4,16 +4,16 @@ import {
   getRecommendListRequest,
 } from '../../../api/request';
 
-export const changeBannerList = (data) => ({
+const changeBannerList = (data) => ({
   type: actionTypes.CHANGE_BANNER,
   data,
 });
 
-export const changeRecommendList = (data) => ({
+const changeRecommendList = (data) => ({
   type: actionTypes.CHANGE_RECOMMEND_LIST,
   data,
 });
-export const changeEnterLoading = (data) => ({
+const changeEnterLoading = (data) => ({
   type: actionTypes.CHANGE_ENTER_LOADING,
   data,
 });
